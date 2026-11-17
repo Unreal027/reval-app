@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# 环境与密钥
+.env
+
+# 构建产物
+node_modules/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# 报告输出
+backend/reports/*.docx
+backend/reports/*.pdf
+
+# 日志与数据
+*.log
+backups/

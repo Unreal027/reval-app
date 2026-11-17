@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# 甲骨文 A1 免费实例防回收:周期性轻负载,使 CPU 95 百分位 > 20%
+# 安装: sudo apt install -y stress-ng && sudo cp keepalive /etc/cron.d/keepalive
+# 原理: 每小时 2 个 3 分钟低强度窗口(约 10% 时间 >20% CPU),破坏"95 分位 <20%"判定
+SHELL=/bin/bash
+0 * * * * root timeout 180 stress-ng --cpu 1 --cpu-load 35 --quiet
+30 * * * * root timeout 180 stress-ng --cpu 1 --cpu-load 35 --quiet
